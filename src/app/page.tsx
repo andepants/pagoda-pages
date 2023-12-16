@@ -63,9 +63,10 @@ export default function Home() {
 
       {/* <button onClick={() => getURL(epubStorageLocation)} className="btn-blue">get URL</button> */}
       {/* <button onClick={downloadBook} className="btn-blue">download PDF</button> */}
+      <script type="text/javascript" defer src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="andepants" data-color="#FFDD00" data-emoji="" data-font="Cookie" data-text="Buy me a coffee" data-outline-color="#000000" data-font-color="#000000" data-coffee-color="#ffffff" ></script>
       <script data-name="BMC-Widget" data-cfasync="false" defer src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="andepants" data-description="Support me on Buy me a coffee!" data-message="" data-color="#FF813F" data-position="Right" data-x_margin="18" data-y_margin="18"></script>
     </main>
   )
 }
 
-// git commit --allow-empty -m "add async to script" --date='13 days ago'
+// git commit --allow-empty -m "add defer to script" --date='10 days ago'
