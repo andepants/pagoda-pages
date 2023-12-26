@@ -1,6 +1,7 @@
 'use client'
 import firebase_app from '../services/firebase/config.js'
 import { getStorage, getDownloadURL, ref } from 'firebase/storage'
+import Script from 'next/script'
 
 export default function Home() {
   const pdfURL = 'https://firebasestorage.googleapis.com/v0/b/pagoda-pages.appspot.com/o/Chapter%201%20%E2%80%93%20The%20heart%20of%20a%20demon%20never%20has%20regret%20even%20in%20death.pdf?alt=media&token=48537d71-7272-4388-8e48-21260b4b60e6';
@@ -62,7 +63,7 @@ export default function Home() {
 
       {/* <button onClick={() => getURL(epubStorageLocation)} className="btn-blue">get URL</button> */}
       {/* <button onClick={downloadBook} className="btn-blue">download PDF</button> */}
-      <script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="andepants" data-description="Support me on Buy me a coffee!" data-message="" data-color="#FF813F" data-position="Right" data-x_margin="18" data-y_margin="18"></script>
+      <Script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="andepants" data-description="Support me on Buy me a coffee!" data-message="" data-color="#FF813F" data-position="Right" data-x_margin="18" data-y_margin="18"></Script>
     </main>
   )
 }
