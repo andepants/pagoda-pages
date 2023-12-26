@@ -52,6 +52,7 @@ export default function Home() {
       <h1 className="texdark-500 text-4xl font-bold flex justify-center">
         Pagoda Pages
       </h1>
+      <h2>I have been waiting for you brother ...</h2>
       <ul className="text-2xl font-bold flex justify-center p-4">Reverand Insanity</ul>
       <div>Volume 1 (first 2 chapters atm)</div>
       <div className="flex justify-between">
