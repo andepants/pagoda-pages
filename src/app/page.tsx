@@ -47,7 +47,6 @@ export default function Home() {
         </li>
         <li>
           <div className="text-2xl text-center font-bold">The Legends of Ren Zhu</div>
-          <div className="text-m text-center">Compilation of the </div>
           <div className="flex justify-center">
             <a href={riRenZhuLegendEpubLink} download className="btn-blue">epub</a>
             <a href={riRenZhuLegendMobiLink} download className="btn-blue">mobi</a>
