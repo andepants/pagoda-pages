@@ -1,7 +1,6 @@
 'use client'
 import firebase_app from '../services/firebase/config.js'
 import { getStorage, getDownloadURL, ref } from 'firebase/storage'
-import Script from 'next/script'
 
 export default function Home() {
   const riEpubLink = 'https://firebasestorage.googleapis.com/v0/b/pagoda-pages.appspot.com/o/Reverend%20Insanity%20-%20Gu%20Zhen%20Ren.epub?alt=media&token=740542ae-965c-41b3-b45c-7ed150eaac88';
