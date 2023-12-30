@@ -4,10 +4,11 @@ import { getStorage, getDownloadURL, ref } from 'firebase/storage'
 import Script from 'next/script'
 
 export default function Home() {
-  const pdfURL = 'https://firebasestorage.googleapis.com/v0/b/pagoda-pages.appspot.com/o/Chapter%201%20%E2%80%93%20The%20heart%20of%20a%20demon%20never%20has%20regret%20even%20in%20death.pdf?alt=media&token=48537d71-7272-4388-8e48-21260b4b60e6';
-  const epubURL = 'https://firebasestorage.googleapis.com/v0/b/pagoda-pages.appspot.com/o/RI%20-%20Volume%201.epub?alt=media&token=7bd990c8-468b-4366-b21c-1523b2c69093';
-  const pdfStorageLocation = 'gs://pagoda-pages.appspot.com/Chapter 1 – The heart of a demon never has regret even in death.pdf'
-  const epubStorageLocation = 'gs://pagoda-pages.appspot.com/RI - Volume 1.epub'
+  const riEpubLink = 'https://firebasestorage.googleapis.com/v0/b/pagoda-pages.appspot.com/o/Reverend%20Insanity%20-%20Gu%20Zhen%20Ren.epub?alt=media&token=740542ae-965c-41b3-b45c-7ed150eaac88';
+  const riMobiLink = 'https://firebasestorage.googleapis.com/v0/b/pagoda-pages.appspot.com/o/Reverend-Insanity-Gu-Zhen-Ren.mobi?alt=media&token=67b8c785-34ef-47ca-97c7-f205c6ffbcfc';
+  const riRenZhuLegendEpubLink = 'https://firebasestorage.googleapis.com/v0/b/pagoda-pages.appspot.com/o/The%20Legends%20of%20Ren%20Zu%20-%20Gu%20Zhen%20Ren.epub?alt=media&token=4bfedd87-c7a5-45a1-924a-5b3ee0ed742b';
+  const riRenZhuLegendMobiLink = 'https://firebasestorage.googleapis.com/v0/b/pagoda-pages.appspot.com/o/The-Legends-of-Ren-Zu-Gu-Zhen-Ren.mobi?alt=media&token=e1c612e7-fb52-402a-a209-a31ed048fbaf';
+  const epubStorageLocation = 'gs://pagoda-pages.appspot.com/The Legends of Ren Zu - Gu Zhen Ren.epub'
 
   const storage = getStorage(firebase_app);
 
@@ -30,43 +31,33 @@ export default function Home() {
       });
   }
 
-  const downloadBook = async () => {
-    // currently not working
-    console.log
-    try {
-      const response = await fetch(pdfURL);
-      const blob = await response.blob();
-      const url = URL.createObjectURL(blob);
-      const link = document.createElement('a');
-      link.href = url;
-      link.download = 'filename.pdf'; // replace with your desired filename
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-    } catch (error) {
-      console.log('error : ', error);
-    }
-  };
-
   return (
     <main className="flex flex-col items-center justify-center min-h-screen">
       <h1 className="texdark-500 text-4xl font-bold flex justify-center">
         Pagoda Pages
       </h1>
-      <h2>I have been waiting for you brother ...</h2>
-      <ul className="text-2xl font-bold flex justify-center p-4">Reverand Insanity</ul>
-      <div>Volume 1 (first 2 chapters atm)</div>
-      <div className="flex justify-between">
-        <a href={epubURL} download className="btn-blue">epub</a>
-        <a href={pdfURL} download className="btn-blue">pdf</a>
-      </div>
-
+      <ul className="flex justify-center flex-col p-4">
+        <li className="m-4">
+          <div className="text-2xl text-center font-bold">Reverand Insanity</div>
+          <div className="text-m text-center">All Chapters (1-2334)</div>
+          <div className="flex justify-center">
+            <a href={riEpubLink} download className="btn-blue">epub</a>
+            <a href={riMobiLink} download className="btn-blue">mobi</a>
+          </div>
+        </li>
+        <li>
+          <div className="text-2xl text-center font-bold">The Legends of Ren Zhu</div>
+          <div className="text-m text-center">Compilation of the </div>
+          <div className="flex justify-center">
+            <a href={riRenZhuLegendEpubLink} download className="btn-blue">epub</a>
+            <a href={riRenZhuLegendMobiLink} download className="btn-blue">mobi</a>
+          </div>
+        </li>
+      </ul>
       {/* <button onClick={() => getURL(epubStorageLocation)} className="btn-blue">get URL</button> */}
       {/* <button onClick={downloadBook} className="btn-blue">download PDF</button> */}
-      <script type="text/javascript" defer src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="andepants" data-color="#FFDD00" data-emoji="" data-font="Cookie" data-text="Buy me a coffee" data-outline-color="#000000" data-font-color="#000000" data-coffee-color="#ffffff" ></script>
-      <script data-name="BMC-Widget" data-cfasync="false" defer src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="andepants" data-description="Support me on Buy me a coffee!" data-message="" data-color="#FF813F" data-position="Right" data-x_margin="18" data-y_margin="18"></script>
     </main>
   )
 }
 
-// git commit --allow-empty -m "add defer to script" --date='10 days ago'
+// git commit --allow-empty -m "add defer to script" --date='11 days ago'
